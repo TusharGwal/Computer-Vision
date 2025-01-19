@@ -1,2 +1,3 @@
 # Computer-Vision
-CS 512 - Computer Vision Coursework
+CS 512 - Computer Vision Coding Assignments
+
