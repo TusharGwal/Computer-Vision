@@ -11,7 +11,7 @@ The script intelligently filters similar images and combines related input/outpu
 import nbformat
 import os
 import base64
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
 import io
 import hashlib
 
