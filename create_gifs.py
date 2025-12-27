@@ -46,14 +46,14 @@ def extract_images_from_notebook(notebook_path):
     return images
 
 
-def create_gif(images, output_path, duration=1000):
+def create_gif(images, output_path, duration=1500):
     """
     Create a GIF from a list of images.
     
     Args:
         images: List of PIL Image objects
         output_path: Path to save the GIF
-        duration: Duration per frame in milliseconds
+        duration: Duration per frame in milliseconds (default: 1500ms = 1.5 seconds)
     """
     if not images:
         print(f"  No images to create GIF at {output_path}")
@@ -89,8 +89,8 @@ def main():
     print("=== Extracting images from Jupyter notebooks ===\n")
     
     # Assignment directories to process
+    # Note: AS0 is excluded as it contains no output images
     assignments = {
-        'AS0': [],
         'AS1': ['AS1.ipynb'],
         'AS2': ['AS2.ipynb'],
         'AS3': ['AS3_P1.ipynb', 'AS3_P2.ipynb', 'AS3_P3.ipynb'],
