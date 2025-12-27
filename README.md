@@ -5,14 +5,20 @@ This repository contains solutions for five computer vision assignments covering
 
 ## Visual Outputs
 
-All visual outputs from the assignments have been compiled into GIFs for easy viewing:
+All visual outputs from the assignments have been compiled into **portfolio-ready GIFs** with intelligent filtering:
 
-- **[All Outputs Combined](all_outputs.gif)** - Complete visualization of all 42 output images from all assignments
-- **[Assignment 1 Outputs](AS1_outputs.gif)** - Image formation and geometric transformations (1 image)
-- **[Assignment 2 Outputs](AS2_outputs.gif)** - Image filtering and edge detection (9 images)
-- **[Assignment 3 Outputs](AS3_outputs.gif)** - Robust estimation and CNN classification (5 images)
-- **[Assignment 4 Outputs](AS4_outputs.gif)** - Semantic segmentation and object detection (23 images)
-- **[Assignment 5 Outputs](AS5_outputs.gif)** - Vision Transformers (4 images)
+- **[All Outputs Combined](all_outputs.gif)** - Curated visualization with 25 frames (40% reduction from original 42)
+- **[Assignment 1 Outputs](AS1_outputs.gif)** - Image formation and geometric transformations (1 frame)
+- **[Assignment 2 Outputs](AS2_outputs.gif)** - Image filtering and edge detection (8 frames)
+- **[Assignment 3 Outputs](AS3_outputs.gif)** - Robust estimation and CNN classification (5 frames)
+- **[Assignment 4 Outputs](AS4_outputs.gif)** - Semantic segmentation and object detection (7 frames)
+- **[Assignment 5 Outputs](AS5_outputs.gif)** - Vision Transformers (4 frames)
+
+**Features:**
+- ✅ Removed repetitive training progress graphs
+- ✅ Combined input/output pairs into single frames
+- ✅ Kept first & last of similar sequences to show progression
+- ✅ Optimized for portfolio presentation
 
 To regenerate the GIFs from the Jupyter notebook outputs, run:
 ```bash
