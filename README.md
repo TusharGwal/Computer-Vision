@@ -3,6 +3,22 @@
 ## Overview
 This repository contains solutions for five computer vision assignments covering fundamental concepts to advanced deep learning techniques. Below is a high-level summary of each assignment's focus and key implementations.
 
+## Visual Outputs
+
+All visual outputs from the assignments have been compiled into GIFs for easy viewing:
+
+- **[All Outputs Combined](all_outputs.gif)** - Complete visualization of all 42 output images from all assignments
+- **[Assignment 1 Outputs](AS1_outputs.gif)** - Image formation and geometric transformations (1 image)
+- **[Assignment 2 Outputs](AS2_outputs.gif)** - Image filtering and edge detection (9 images)
+- **[Assignment 3 Outputs](AS3_outputs.gif)** - Robust estimation and CNN classification (5 images)
+- **[Assignment 4 Outputs](AS4_outputs.gif)** - Semantic segmentation and object detection (23 images)
+- **[Assignment 5 Outputs](AS5_outputs.gif)** - Vision Transformers (4 images)
+
+To regenerate the GIFs from the Jupyter notebook outputs, run:
+```bash
+python3 create_gifs.py
+```
+
 ---
 
 ## Assignment 0: Vector/Matrix Operations & Neural Network Basics
