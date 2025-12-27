@@ -46,7 +46,7 @@ def extract_images_from_notebook(notebook_path):
     return images
 
 
-def create_gif(images, output_path, duration=1500):
+def create_gif(images, output_path, duration=1500, target_size=(800, 600)):
     """
     Create a GIF from a list of images.
     
@@ -54,23 +54,43 @@ def create_gif(images, output_path, duration=1500):
         images: List of PIL Image objects
         output_path: Path to save the GIF
         duration: Duration per frame in milliseconds (default: 1500ms = 1.5 seconds)
+        target_size: Target size (width, height) for all frames (default: (800, 600))
     """
     if not images:
         print(f"  No images to create GIF at {output_path}")
         return
     
-    # Convert all images to RGB mode (required for GIF)
+    # Find the maximum dimensions to determine a good target size
+    max_width = max(img.size[0] for img in images)
+    max_height = max(img.size[1] for img in images)
+    
+    # Use the max dimensions as target size to avoid excessive scaling
+    target_size = (max_width, max_height)
+    
+    # Convert all images to RGB mode and resize to target size
     rgb_images = []
     for img in images:
+        # Convert to RGB first
         if img.mode == 'RGBA':
             # Create white background
             background = Image.new('RGB', img.size, (255, 255, 255))
             background.paste(img, mask=img.split()[3])  # Use alpha channel as mask
-            rgb_images.append(background)
+            rgb_img = background
         elif img.mode != 'RGB':
-            rgb_images.append(img.convert('RGB'))
+            rgb_img = img.convert('RGB')
         else:
-            rgb_images.append(img)
+            rgb_img = img
+        
+        # Create a canvas of target size with white background
+        canvas = Image.new('RGB', target_size, (255, 255, 255))
+        
+        # Calculate position to center the image on the canvas
+        x_offset = (target_size[0] - rgb_img.size[0]) // 2
+        y_offset = (target_size[1] - rgb_img.size[1]) // 2
+        
+        # Paste the image onto the canvas
+        canvas.paste(rgb_img, (x_offset, y_offset))
+        rgb_images.append(canvas)
     
     # Save as GIF
     rgb_images[0].save(
@@ -80,7 +100,7 @@ def create_gif(images, output_path, duration=1500):
         duration=duration,
         loop=0
     )
-    print(f"  Created GIF: {output_path} ({len(images)} frames)")
+    print(f"  Created GIF: {output_path} ({len(images)} frames, {target_size[0]}x{target_size[1]})")
 
 
 def main():
