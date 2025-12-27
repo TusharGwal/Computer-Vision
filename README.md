@@ -3,6 +3,49 @@
 ## Overview
 This repository contains solutions for five computer vision assignments covering fundamental concepts to advanced deep learning techniques. Below is a high-level summary of each assignment's focus and key implementations.
 
+## Visual Outputs
+
+Visual outputs from the assignments are available in two formats:
+
+### PowerPoint Presentations (Recommended for Portfolio)
+
+**Combined presentation with all outputs:**
+- **[all_outputs.pptx](all_outputs.pptx)** - All Assignments Combined (23 slides, 3.4MB)
+
+**Individual presentations by assignment:**
+- **[AS1_outputs.pptx](AS1_outputs.pptx)** - Image Formation & Geometric Transformations (1 slide, 383KB)
+- **[AS2_outputs.pptx](AS2_outputs.pptx)** - Image Filtering & Edge Detection (7 slides, 1.4MB)
+- **[AS3_outputs.pptx](AS3_outputs.pptx)** - Robust Estimation & CNN Classification (5 slides, 227KB)
+- **[AS4_outputs.pptx](AS4_outputs.pptx)** - Semantic Segmentation & Object Detection (6 slides, 886KB)
+- **[AS5_outputs.pptx](AS5_outputs.pptx)** - Vision Transformers (4 slides, 724KB)
+
+**Presentation Features:**
+- ✅ **Aggressive filtering**: Removed repetitive images (e.g., AS4: 23 → 6 unique slides)
+- ✅ **Portfolio-ready**: Each image on a separate slide for easy extraction
+- ✅ **High quality**: Full-resolution images centered on slides
+- ✅ **No duplicates**: Similar images deduplicated using perceptual hashing
+
+To create presentations:
+```bash
+python3 create_presentations.py
+```
+
+### Animated GIFs (Alternative View)
+
+Portfolio-optimized GIFs with intelligent filtering:
+
+- **[All Outputs Combined](all_outputs.gif)** - Curated visualization with 25 frames
+- **[Assignment 1 Outputs](AS1_outputs.gif)** - 1 frame
+- **[Assignment 2 Outputs](AS2_outputs.gif)** - 8 frames
+- **[Assignment 3 Outputs](AS3_outputs.gif)** - 5 frames
+- **[Assignment 4 Outputs](AS4_outputs.gif)** - 7 frames
+- **[Assignment 5 Outputs](AS5_outputs.gif)** - 4 frames
+
+To create GIFs:
+```bash
+python3 create_gifs.py
+```
+
 ---
 
 ## Assignment 0: Vector/Matrix Operations & Neural Network Basics
