@@ -222,6 +222,7 @@ def main():
     }
     
     presentation_counts = {}
+    all_images_combined = []
     
     # Process each assignment
     for assignment, config in assignments.items():
@@ -240,6 +241,9 @@ def main():
             else:
                 print(f"  Notebook not found: {notebook_path}")
         
+        # Add to combined collection
+        all_images_combined.extend(assignment_images)
+        
         # Create presentation for this assignment if there are images
         if assignment_images:
             pptx_path = f"{assignment}_outputs.pptx"
@@ -250,11 +254,22 @@ def main():
         
         print()
     
+    # Create combined presentation with all images
+    print("Creating combined presentation with all images...")
+    if all_images_combined:
+        create_presentation(all_images_combined, "all_outputs.pptx", 
+                          "All Assignments: Computer Vision Outputs")
+        print(f"  Combined presentation: all_outputs.pptx ({len(all_images_combined)} slides)")
+    else:
+        print("No images found across all assignments")
+    
     # Print summary
     print("\n=== Summary ===")
-    print(f"Total presentations created: {len(presentation_counts)}")
+    print(f"Total presentations created: {len(presentation_counts) + 1}")
     for assignment, count in presentation_counts.items():
         print(f"  {assignment}_outputs.pptx: {count} slides")
+    if all_images_combined:
+        print(f"  all_outputs.pptx: {len(all_images_combined)} slides (combined)")
     
     print("\nNote: Similar/repetitive images have been aggressively filtered.")
     print("You can now extract GIFs from these presentations as needed.")

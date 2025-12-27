@@ -9,8 +9,10 @@ Visual outputs from the assignments are available in two formats:
 
 ### PowerPoint Presentations (Recommended for Portfolio)
 
-Individual PowerPoint presentations with aggressively filtered, unique images:
+**Combined presentation with all outputs:**
+- **[all_outputs.pptx](all_outputs.pptx)** - All Assignments Combined (23 slides, 3.4MB)
 
+**Individual presentations by assignment:**
 - **[AS1_outputs.pptx](AS1_outputs.pptx)** - Image Formation & Geometric Transformations (1 slide, 383KB)
 - **[AS2_outputs.pptx](AS2_outputs.pptx)** - Image Filtering & Edge Detection (7 slides, 1.4MB)
 - **[AS3_outputs.pptx](AS3_outputs.pptx)** - Robust Estimation & CNN Classification (5 slides, 227KB)
