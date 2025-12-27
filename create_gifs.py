@@ -46,28 +46,28 @@ def extract_images_from_notebook(notebook_path):
     return images
 
 
-def create_gif(images, output_path, duration=1500, target_size=(800, 600)):
+def create_gif(images, output_path, duration=1500):
     """
     Create a GIF from a list of images.
+    
+    All frames are normalized to a consistent canvas size (maximum width and height
+    across all images) with smaller images centered on a white background.
     
     Args:
         images: List of PIL Image objects
         output_path: Path to save the GIF
         duration: Duration per frame in milliseconds (default: 1500ms = 1.5 seconds)
-        target_size: Target size (width, height) for all frames (default: (800, 600))
     """
     if not images:
         print(f"  No images to create GIF at {output_path}")
         return
     
-    # Find the maximum dimensions to determine a good target size
+    # Find the maximum dimensions across all images to create consistent canvas size
     max_width = max(img.size[0] for img in images)
     max_height = max(img.size[1] for img in images)
+    canvas_size = (max_width, max_height)
     
-    # Use the max dimensions as target size to avoid excessive scaling
-    target_size = (max_width, max_height)
-    
-    # Convert all images to RGB mode and resize to target size
+    # Convert all images to RGB mode and center on canvas
     rgb_images = []
     for img in images:
         # Convert to RGB first
@@ -81,12 +81,12 @@ def create_gif(images, output_path, duration=1500, target_size=(800, 600)):
         else:
             rgb_img = img
         
-        # Create a canvas of target size with white background
-        canvas = Image.new('RGB', target_size, (255, 255, 255))
+        # Create a canvas of consistent size with white background
+        canvas = Image.new('RGB', canvas_size, (255, 255, 255))
         
         # Calculate position to center the image on the canvas
-        x_offset = (target_size[0] - rgb_img.size[0]) // 2
-        y_offset = (target_size[1] - rgb_img.size[1]) // 2
+        x_offset = (canvas_size[0] - rgb_img.size[0]) // 2
+        y_offset = (canvas_size[1] - rgb_img.size[1]) // 2
         
         # Paste the image onto the canvas
         canvas.paste(rgb_img, (x_offset, y_offset))
@@ -100,7 +100,7 @@ def create_gif(images, output_path, duration=1500, target_size=(800, 600)):
         duration=duration,
         loop=0
     )
-    print(f"  Created GIF: {output_path} ({len(images)} frames, {target_size[0]}x{target_size[1]})")
+    print(f"  Created GIF: {output_path} ({len(images)} frames, {canvas_size[0]}x{canvas_size[1]})")
 
 
 def main():
