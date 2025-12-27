@@ -5,22 +5,41 @@ This repository contains solutions for five computer vision assignments covering
 
 ## Visual Outputs
 
-All visual outputs from the assignments have been compiled into **portfolio-ready GIFs** with intelligent filtering:
+Visual outputs from the assignments are available in two formats:
 
-- **[All Outputs Combined](all_outputs.gif)** - Curated visualization with 25 frames (40% reduction from original 42)
-- **[Assignment 1 Outputs](AS1_outputs.gif)** - Image formation and geometric transformations (1 frame)
-- **[Assignment 2 Outputs](AS2_outputs.gif)** - Image filtering and edge detection (8 frames)
-- **[Assignment 3 Outputs](AS3_outputs.gif)** - Robust estimation and CNN classification (5 frames)
-- **[Assignment 4 Outputs](AS4_outputs.gif)** - Semantic segmentation and object detection (7 frames)
-- **[Assignment 5 Outputs](AS5_outputs.gif)** - Vision Transformers (4 frames)
+### PowerPoint Presentations (Recommended for Portfolio)
 
-**Features:**
-- ✅ Removed repetitive training progress graphs
-- ✅ Combined input/output pairs into single frames
-- ✅ Kept first & last of similar sequences to show progression
-- ✅ Optimized for portfolio presentation
+Individual PowerPoint presentations with aggressively filtered, unique images:
 
-To regenerate the GIFs from the Jupyter notebook outputs, run:
+- **[AS1_outputs.pptx](AS1_outputs.pptx)** - Image Formation & Geometric Transformations (1 slide, 383KB)
+- **[AS2_outputs.pptx](AS2_outputs.pptx)** - Image Filtering & Edge Detection (7 slides, 1.4MB)
+- **[AS3_outputs.pptx](AS3_outputs.pptx)** - Robust Estimation & CNN Classification (5 slides, 227KB)
+- **[AS4_outputs.pptx](AS4_outputs.pptx)** - Semantic Segmentation & Object Detection (6 slides, 886KB)
+- **[AS5_outputs.pptx](AS5_outputs.pptx)** - Vision Transformers (4 slides, 724KB)
+
+**Presentation Features:**
+- ✅ **Aggressive filtering**: Removed repetitive images (e.g., AS4: 23 → 6 unique slides)
+- ✅ **Portfolio-ready**: Each image on a separate slide for easy extraction
+- ✅ **High quality**: Full-resolution images centered on slides
+- ✅ **No duplicates**: Similar images deduplicated using perceptual hashing
+
+To create presentations:
+```bash
+python3 create_presentations.py
+```
+
+### Animated GIFs (Alternative View)
+
+Portfolio-optimized GIFs with intelligent filtering:
+
+- **[All Outputs Combined](all_outputs.gif)** - Curated visualization with 25 frames
+- **[Assignment 1 Outputs](AS1_outputs.gif)** - 1 frame
+- **[Assignment 2 Outputs](AS2_outputs.gif)** - 8 frames
+- **[Assignment 3 Outputs](AS3_outputs.gif)** - 5 frames
+- **[Assignment 4 Outputs](AS4_outputs.gif)** - 7 frames
+- **[Assignment 5 Outputs](AS5_outputs.gif)** - 4 frames
+
+To create GIFs:
 ```bash
 python3 create_gifs.py
 ```
